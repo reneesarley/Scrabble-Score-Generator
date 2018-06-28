@@ -63,13 +63,12 @@ namespace ScrabbleScore
             return letterArray;
         }
 
-        public int CalculateWordScore(char[] letterArray)
+        public void CalculateWordScore(char[] letterArray)
         {
             for (int i = 0; i < letterArray.Length; ++ i)
             {
                 _wordScore = _wordScore + (_letterValues[letterArray[i]]);
             }
-            return _wordScore;
         }
 
     }
