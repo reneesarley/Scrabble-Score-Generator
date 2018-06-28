@@ -40,15 +40,27 @@ namespace ScrabbleScoreTests
         public void GetLetterValues_LetterValues_Int()
         {
             //Arrange
-            char testLetter = 'a';
+            char testLetter = 'l';
             Word newWord = new Word();
 
             //Act
             int result = newWord.GetLetterValue(testLetter);
 
-
             //Assert
             Assert.AreEqual(result, 1);
+        }
+        [TestMethod]
+        public void BuildLetterValueDictionary_MatchValuesToLetters_Int()
+        {
+            //Arrange
+            char onePointLetterTest = 'l';
+            Word newWord = new Word();
+
+            //Act
+            int onePointResult = newWord.GetLetterValue(onePointLetterTest);
+
+            //Assert
+            Assert.AreEqual(onePointResult, 1);
         }
 	}
 }

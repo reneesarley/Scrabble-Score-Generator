@@ -8,11 +8,20 @@ namespace ScrabbleScore
         private string _wordToScore;
         private int _wordScore;
         private Dictionary<char, int> _letterValues = new Dictionary<char, int>(){};
+        private List<char> _onePointLetters = new List<char>() {'a', 'e', 'i', 'o', 'u', 'l', 'n', 'r', 's', 't'};
 
         public Word()
         {
             _wordScore = 0;
-            _letterValues['a'] = 1;
+            this.BuildLetterValueDictionary(_onePointLetters, 1);
+
+        }
+        public void BuildLetterValueDictionary(List<char >pointList, int pointValue)
+        {
+            for (int i = 0; i < pointList.Count; ++i)
+            {
+                _letterValues[pointList[i]] = pointValue;
+            } 
         }
 
         public void SetWordToScore(string usersWord)
