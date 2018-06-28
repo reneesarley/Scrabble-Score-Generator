@@ -24,13 +24,14 @@ namespace ScrabbleScoreTests
             Assert.AreEqual(result, testWord);
         } 
         [TestMethod]
-        public void GetWordScore_ReturnsWordScore_Int()
+        public void SetGetWordScore_ReturnsWordScore_Int()
         {
             //Arrange
             Word newWord = new Word();
 
             //Act
             int result = newWord.GetWordScore();
+            newWord.SetWordScore(0);
 
             //Assert
             Assert.AreEqual(0, result);

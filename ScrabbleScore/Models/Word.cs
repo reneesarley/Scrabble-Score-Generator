@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace ScrabbleScore
 {
@@ -18,7 +17,6 @@ namespace ScrabbleScore
 
         public Word()
         {
-            _wordScore = 0;
             this.BuildLetterValueDictionary(_onePointLetters, 1);
             this.BuildLetterValueDictionary(_twoPointLetters, 2);
             this.BuildLetterValueDictionary(_threePointLetters, 3);
@@ -34,6 +32,10 @@ namespace ScrabbleScore
             {
                 _letterValues[pointList[i]] = pointValue;
             }
+        }
+        public void  SetWordScore(int startingScore)
+        {
+            _wordScore = startingScore;
         }
 
         public void SetWordToScore(string usersWord)
@@ -60,6 +62,7 @@ namespace ScrabbleScore
         {
             string lowerWordToScore = _wordToScore.ToLower();
             char[] letterArray = lowerWordToScore.ToCharArray();
+            CalculateWordScore(letterArray);
             return letterArray;
         }
 
