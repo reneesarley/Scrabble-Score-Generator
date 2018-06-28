@@ -27,18 +27,20 @@ namespace ScrabbleScore
             this.BuildLetterValueDictionary(_eightPointLetters, 8);
             this.BuildLetterValueDictionary(_tenPointLetters, 10);
         }
-        public void BuildLetterValueDictionary(List<char >pointList, int pointValue)
+
+        public void BuildLetterValueDictionary(List<char> pointList, int pointValue)
         {
             for (int i = 0; i < pointList.Count; ++i)
             {
                 _letterValues[pointList[i]] = pointValue;
-            } 
+            }
         }
 
         public void SetWordToScore(string usersWord)
         {
-            _wordToScore = usersWord; 
+            _wordToScore = usersWord;
         }
+
         public string GetWordToScore()
         {
             return _wordToScore;
@@ -48,9 +50,17 @@ namespace ScrabbleScore
         {
             return _wordScore;
         }
+
         public int GetLetterValue(char letter)
         {
             return _letterValues[letter];
+        }
+
+        public char[] ConvertWordToArrayAndLower()
+        {
+            string lowerWordToScore = _wordToScore.ToLower();
+            char[] letterArray = lowerWordToScore.ToCharArray();
+            return letterArray;
         }
 
     }

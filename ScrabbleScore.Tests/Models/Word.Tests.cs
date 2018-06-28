@@ -80,5 +80,22 @@ namespace ScrabbleScoreTests
             Assert.AreEqual(eightPointResult, 8);
             Assert.AreEqual(tenPointResult, 10);
         }
+
+        [TestMethod]
+        public void ConvertWordToArrayAndLower_CreateListOfLetters_char()
+        {
+            //Arrange
+            string testWord = "CAR";
+            char[] testArray = new char[] { 'c', 'a', 'r' };
+            Word newWord = new Word();
+
+            //Act
+            newWord.SetWordToScore(testWord);
+            char[] resultArray = newWord.ConvertWordToArrayAndLower();
+
+            //Assert
+            CollectionAssert.AreEqual(testArray, resultArray );
+
+        }
 	}
 }
