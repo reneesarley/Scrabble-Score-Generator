@@ -11,9 +11,9 @@ namespace ScrabbleScore
             Console.WriteLine("Enter a word to get its Scrabble score");
             string usersWord = Console.ReadLine();
             Word newWord = new Word();
-            //newWord.SetWordToScore(usersWord);
-            //newWord.ConvertWordToArrayAndLower();
-            //Console.WriteLine("{0} is the score for {1}", newWord.GetWordScore(), usersWord);
+            newWord.SetWordToScore(usersWord);
+            newWord.ConvertWordToArrayAndLower();
+            Console.WriteLine("{0} is the score for {1}", newWord.GetWordScore(), usersWord);
 
         }
     }
