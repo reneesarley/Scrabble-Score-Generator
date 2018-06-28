@@ -97,5 +97,20 @@ namespace ScrabbleScoreTests
             CollectionAssert.AreEqual(testArray, resultArray );
 
         }
+
+        [TestMethod]
+        public void GetWordScore_CalculateScoreForWord_Int()
+        {
+            //Arrage
+            char[] testArray = new char[] { 'c', 'a', 'r' };
+            int testScore = 5;
+            Word newWord = new Word();
+
+            //Act
+            int resultScore = newWord.CalculateWordScore(testArray);
+
+            //Assert
+            Assert.AreEqual(resultScore, testScore);
+        }
 	}
 }
